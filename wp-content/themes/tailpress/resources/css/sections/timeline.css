@@ -1,0 +1,57 @@
+.timeline--line {
+    @apply h-full w-1 bg-gray-800 rounded-t-full relative pt-4;
+}
+
+.timeline--line:before {
+    content: '';
+    @apply block absolute w-5 h-5 top-4 -left-2 bg-red-800 rounded-full border-4 border-tertiary;
+}
+
+#timeline {
+    @apply bg-tertiary pt-20;
+}   
+
+#timeline h2 {
+    @apply mb-4 text-black text-center;
+}
+
+#timeline h3,
+#timeline h4 {
+    @apply text-black; 
+}
+
+#timeline h3 {
+    @apply text-lg md:text-2xl
+}
+
+#timeline h5 {
+    @apply  font-header text-2xl text-black font-semibold mb-4;
+}
+
+#timeline p {
+    @apply text-black text-center;
+}
+
+#timeline .timeline-grid {
+    @apply grid grid-cols-12 -mt-1;
+}
+
+#timeline .timeline-grid:nth-of-type(1) { 
+    @apply mt-20
+}
+
+#timeline .timeline-grid > div > p {
+    @apply text-gray-400 font-body text-sm leading-loose text-left;
+}
+
+.timeline-grid__company {
+    @apply text-right hidden md:text-right md:block md:col-span-4 md:pt-4;
+}
+
+.timeline-grid__dot {
+    @apply col-start-1 col-end-3 md:col-start-5 md:col-end-9 flex items-center justify-center;
+}
+
+.timeline-grid__role {
+    @apply flex items-start flex-col justify-center text-left order-2 col-start-3 col-end-13 md:col-span-4 md:pt-4 mb-20;
+}

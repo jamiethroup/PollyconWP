@@ -1,0 +1,422 @@
+/*------------------------------------------------------------------
+[Master Stylesheet]
+
+Project:    Pollycon
+Version:    2.0
+Assigned to:    Jamie Throup
+Primary use:    Web
+
+[Table of contents]
+
+1. Globals
+2. Header / #header
+2. Footer / #header
+3. Hero Section
+4. About Section
+5. Timeline Section
+6. Clients Section
+
+-------------------------------------------------------------------*/
+
+body, html {
+    overflow-x: hidden;
+    @apply font-body;
+    scroll-behavior: smooth;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*------------------------------------------------------------------
+[1. Globals]
+*/
+
+.container {
+    @apply mx-auto px-4 md:px-0;
+}
+
+h1, .h1 {
+    @apply  font-header text-2xl leading-snug md:text-5xl md:leading-normal text-white font-semibold mb-4;
+}
+
+h2, .h2 {
+    @apply  font-header text-2xl md:text-4xl text-white font-semibold mb-4;
+}
+
+h3, .h3 {
+    @apply  font-header text-2xl text-white font-semibold mb-4;
+}
+
+h4, .h4 {
+    @apply  font-body text-white leading-normal text-sm font-semibold uppercase tracking-widest opacity-60 mb-4;
+}
+  
+p {
+    @apply font-body text-base text-white leading-loose mb-6;
+}
+
+.button {
+    @apply text-primary font-body text-xs leading-5 font-semibold items-center justify-center border-2 py-2 uppercase tracking-wider px-6 rounded-full border-primary hover:text-white hover:bg-primary transition-all duration-300 ease-in-out inline-table;
+}
+
+.button.light {
+    @apply text-white border-white;
+}
+
+.button span {
+    background-image:url('../img/icon-arrow-blue.svg');
+    @apply transition-all duration-300 ease-in-out ml-3 bg-no-repeat bg-cover inline-block h-3 w-4;
+}
+
+.button:hover span {
+    @apply transition-all duration-300 ease-in-out;  
+}
+
+.button span.arrow {
+    background-image:url('../img/icon-arrow-blue.svg');
+    @apply transition-all duration-300 ease-in-out ml-3 bg-no-repeat bg-cover inline-block h-3 w-4;
+}
+
+/*------------------------------------------------------------------
+[2. Header / #header ]
+*/
+
+#header {
+    @apply px-6 md:px-8 py-6 md:py-8 fixed z-10 w-full top-0 left-0;
+}
+
+#header > div {
+    @apply container w-full max-w-full; 
+}
+
+#header .logo-dark {
+    display: none;
+}
+
+#header.sticky-header .logo-dark {
+    display: block;
+}
+
+#header.sticky-header .logo-white {
+    display: none;
+}
+
+#header nav .navigation--desktop {
+    @apply hidden md:block;
+}
+
+#header nav .navigation--desktop ul {
+    @apply list-none;
+}
+
+
+#header nav .navigation--desktop ul li {
+    @apply inline-block leading-normal;
+}
+
+#header nav .navigation--desktop ul li a {
+    @apply text-white font-body relative leading-3 text-sm font-semibold uppercase tracking-widest ml-16;
+}
+
+#header.sticky-header nav .navigation--desktop ul li a {
+    @apply text-primary;
+}
+
+
+#header nav .navigation--desktop ul li:nth-of-type(1) a {
+    @apply ml-0;
+}
+
+
+#header nav .navigation--desktop ul li a:after {
+    @apply transition-all ease-in-out duration-300 absolute bottom-0 left-0 block w-full h-0.5 bg-transparent;
+    content: '';
+}
+
+#header nav .navigation--desktop ul li a:hover::after {
+    @apply transition-all ease-in-out duration-300 bg-white transform translate-y-1;
+}
+/*------------------------------------------------------------------
+[4. About Section / #about-section]
+*/
+
+#about-section {
+    @apply py-20 md:py-32 mx-auto px-6 md:px-8 bg-primary text-left md:text-center;
+}
+
+#about-section > div {
+    @apply max-w-4xl mx-auto;
+}
+
+#about-grid {
+    @apply grid grid-cols-2 md:grid-cols-3 mt-20 gap-10 text-center;
+}
+
+#about-grid h3 {
+    @apply mb-4;
+}
+
+@media(max-width: 750px) {
+    #about-grid > div:nth-of-type(3) {
+        grid-column: 1 / 3;
+    }
+}
+
+a span.arrow  {
+    background-image:url('../img/icon-arrow-blue.svg');
+}
+
+.button:hover span.arrow {
+    background-image:url('../img/icon-arrow-white.svg');
+}
+
+.button span.github {
+    background-image:url('../img/icon-github-blue.svg');
+    height: 18px;
+    width: 18px;
+}
+
+.button:hover span.github {
+    background-image:url('../img/icon-github.svg');
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #ffffff;
+    z-index: 1031;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.35s;
+    cursor: pointer;
+}
+
+.menu:before {
+    content: 'MENU';
+    @apply fixed flex items-center justify-center h-full w-full top-0 left-0 font-body font-bold;
+    font-size: 30vw;
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+.menu.open {
+    visibility: visible;
+    opacity: 1;
+}
+
+.menu.open a {
+    pointer-events: all;
+}
+
+.header__menu-icon {
+    width: 30px;
+    height: 30px;
+    position: relative;
+}
+
+.header__menu-icon span {
+    @apply bg-gray-300 rounded-full h-0.5 right-0 absolute block transition-all ease-in-out duration-150 w-8
+}
+
+.header__menu-icon span:before {
+    content: '';
+    @apply bg-gray-300 rounded-full w-10/12 h-0.5 -top-2.5 right-0 absolute block transition-all ease-in-out duration-150
+}
+
+.header__menu-icon span:after {
+    content: '';
+    @apply bg-gray-300 rounded-full w-1/2 h-0.5 top-2.5 right-0 absolute block transition-all ease-in-out duration-150
+}
+
+.header__menu-icon:hover span * {
+    @apply bg-white;
+}
+
+#header {
+    @apply transition-all ease-in-out duration-300;
+}
+
+#header.sticky-header {
+    background: white;
+    padding: 12px 1.5rem;
+    @apply transition-all ease-in-out duration-300;
+}
+
+@media screen and (min-width: 567px) {
+  #header.sticky-header {
+        padding: 12px 2rem;
+  }
+}
+
+.header__menu-icon:hover span, .header__menu-icon:hover span:before, .header__menu-icon:hover span:after {
+    @apply transition-all ease-in-out duration-150;
+    width: 30px;
+}
+
+
+.portfolio__slide {
+    width: 700px;
+    padding-left: 0px!important;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 3px;
+    background: red;
+}
+
+::-webkit-scrollbar-track {
+    background: #FFFFFF;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #f0f0f0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2c2c2c;
+}
+
+.portfolio__slider::-webkit-scrollbar-thumb {
+    background: #2c2c2c;
+}
+
+.rotated-list {
+    position: relative; 
+}
+
+.rotated-list:after {
+    content: '';
+    display: block;
+    width: 122px;
+    height: 1px;
+    background: #0d2e3e;
+    position: relative;
+    bottom: 15px;
+    left: -72%;
+}
+
+.rotated-list-email {
+    position: relative; 
+}
+
+.rotated-list-email:after {
+    content: '';
+    display: block;
+    width: 122px;
+    height: 1px;
+    background: #0d2e3e;
+    position: relative;
+    bottom: 21px;
+    left: -97%;
+}
+
+.social-image:hover {
+    transform: scale(1.05) rotate(0deg);
+}
+
+.portfolio-piece-link {
+    position: relative;
+    display: block;
+}
+
+.portfolio-piece-link:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.gatsby-image-wrapper [data-main-image] {
+    transform: none;
+    transition: none;
+    will-change: initial;
+}
+
+
+
+/*------------------------------------------------------------------
+[5. Timeline Section / #timeline]
+*/
+
+.timeline--line {
+    @apply h-full w-1 bg-gray-800 rounded-t-full relative pt-4;
+}
+
+.timeline--line:before {
+    content: '';
+    @apply block absolute w-5 h-5 top-4 -left-2 bg-red-800 rounded-full border-4 border-tertiary;
+}
+
+#timeline h2 {
+    @apply mb-4 text-black text-center;
+}
+
+#timeline h3,
+#timeline h4 {
+    @apply text-black;
+}
+
+#timeline h3 {
+    @apply text-lg md:text-2xl
+}
+
+#timeline h5 {
+    @apply  font-header text-2xl text-black font-semibold mb-4;
+}
+
+#timeline p {
+    @apply text-black text-center;
+}
+
+#timeline .timeline-grid {
+    @apply grid grid-cols-12 -mt-1;
+}
+
+#timeline .timeline-grid:nth-of-type(1) {
+    @apply mt-20
+}
+
+#timeline .timeline-grid > div > p {
+    @apply text-gray-400 font-body text-sm leading-loose text-left;
+}
+
+.timeline-grid__company {
+    @apply text-right hidden md:text-right md:block md:col-span-4 md:pt-4;
+}
+
+.timeline-grid__dot {
+    @apply col-start-1 col-end-3 md:col-start-5 md:col-end-9 flex items-center justify-center;
+}
+
+.timeline-grid__role {
+    @apply flex items-start flex-col justify-center text-left order-2 col-start-3 col-end-13 md:col-span-4 md:pt-4 mb-20;
+}
+
+
+/*------------------------------------------------------------------
+[5. Clients Section / #portfolio]
+*/
+
+#portfolio .portfolio-grid {
+    @apply container py-20 mx-auto px-6 md:px-0 grid grid-cols-12 gap-5 md:gap-7 text-center;
+}
+
+.portfolio--view-all {
+    @apply text-sm text-red-500 font-semibold;
+}
+
+#portfolio .client-box {
+    height:30vw;
+    @apply pr-10 ml-20;
+}

@@ -1,0 +1,21 @@
+header {
+    @apply absolute top-0 left-0 z-10 w-screen;
+}
+
+header .custom-logo {
+    @apply w-10;
+} 
+
+
+header #primary-menu a {
+    @apply font-body text-sm text-white font-semibold uppercase drop-shadow-lg;
+}
+
+
+footer #primary-menu a {
+    @apply font-body text-sm text-gray-800 font-semibold uppercase drop-shadow-lg;
+}
+
+footer .footer-menu {
+    @apply flex items-center justify-end;
+}

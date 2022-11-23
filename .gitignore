@@ -21,18 +21,19 @@
 wp-config.php
 
 # Example themes
-!/wp-content/themes/tailpress/
-!/wp-content/themes/tailpress/*
+/wp-content/themes/twenty*/
 
 # Example plugin
 /wp-content/plugins/hello.php
 
-# Uploads / Backups
+# Uploads
 /wp-content/uploads/
-/wp-content/ai1*
 
 # Plugins
 /wp-content/plugins/
+
+# Backups
+/wp-content/ai1*
 
 # Log files
 *.log

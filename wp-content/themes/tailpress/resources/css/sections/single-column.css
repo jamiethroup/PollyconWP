@@ -1,0 +1,19 @@
+#single-column {
+    @apply bg-primary py-20;
+}
+
+#single-column .container {
+    @apply max-w-3xl text-center;
+}
+
+#single-column .large-number {
+    @apply text-6xl font-header mb-6 text-white font-semibold;
+}
+
+#single-column .statistics-grid {
+    @apply grid grid-cols-1 md:grid-cols-3 gap-4 mt-4 md:mt-10;
+}
+
+#single-column .statistics-grid p {
+    @apply text-xs leading-6; 
+} 

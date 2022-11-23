@@ -1,0 +1,32 @@
+/*------------------------------------------------------------------
+[Master Stylesheet]
+
+Project:    Pollycon
+Version:    1.0
+Assigned to:    Jamie Throup
+Primary use:    Web
+
+[Table of contents]
+
+1. Tailwind Base / Global
+2. Tailwind Components / Global
+2. Tailwind Utilities / Global
+3. Hero Section
+4. About Section
+5. Timeline Section
+6. Clients Section
+
+-------------------------------------------------------------------*/
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "aos.css";
+
+@import "custom.css";
+@import "sections/swiper.css";
+@import "sections/header.css";
+@import "sections/hero.css";
+@import "sections/single-column.css";
+@import "sections/timeline.css"; 
+@import "sections/portfolio.css"; 
+@import "sections/posts-loop.css"; 

@@ -1,0 +1,24 @@
+#hero-section {
+    @apply pt-96  md:h-screen text-left w-full flex items-end justify-start md:py-0 md:px-8 relative;
+}
+
+#hero-section h4 {
+    @apply mb-0;
+}
+
+#hero-section h1 {
+    @apply leading-normal;
+}
+
+#hero-section .content {
+    @apply relative z-10 px-4 pb-6 md:pb-20 md:p-20;
+}
+
+
+#hero-section .content {
+    @apply max-w-5xl;
+}
+
+#hero-section img {
+    @apply absolute top-0 left-0 p-0 w-full h-full object-cover z-0;
+}
